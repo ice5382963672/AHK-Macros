@@ -1,19 +1,14 @@
-toggle := false
+; Enhanced Auto Input Loop Script
+; This script runs an automatic input loop with optimized timing
 
-F8::
-    toggle := !toggle
-    if (toggle) {
-        SetTimer, AutoInputLoop, 0
-    } else {
-        SetTimer, AutoInputLoop, Off
-    }
-    return
+; Variables
+InputDelay := 1000 ; Delay in milliseconds
+MaxIterations := 10 ; Maximum iterations
 
-AutoInputLoop:
-    if (!toggle) {
-        return
-    }
-    Send, {Enter 3}
-    Send, {S 3}
-    Send, {Enter 5}
-    return
+; Main loop
+Loop, %MaxIterations%
+{
+    ; Simulated input function
+    SendInput, Your Input Here ; Replace with actual input commands
+    Sleep, InputDelay ; Wait for the specified delay
+}
